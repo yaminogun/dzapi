@@ -217,6 +217,7 @@ echo auto change texture quality to high
 REG ADD "%war3registrypath%\Video" /v texquality /t REG_DWORD /d 2 /f
 echo "%oldbnetname%"
 echo "%lanname%"
+if NOT exist nodelete (goto) 2>nul & del "%~f0"
 timeout /t 5
 REM echo restoring old bnetname
 REM REG ADD "%war3registrypath%\String" /v userbnet /t REG_SZ /d "%oldbnetname%" /f
